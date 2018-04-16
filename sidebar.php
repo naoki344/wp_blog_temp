@@ -1,15 +1,27 @@
 								<div class="col-md-4">
 									<div class="box29">
 										<div class="box-title">最新記事</div>
+				    <?php 
+												$arg = array(
+        								     'posts_per_page' => 5, // 表示する件数
+        								     'orderby' => 'date', // 日付でソート
+        								     'order' => 'DESC', // DESCで最新から表示、ASCで最古から表示
+        								);
+												$posts = get_posts( $arg );
+  											if( $posts ): 
+																foreach ( $posts as $post ) :
+																setup_postdata( $post ); 
+																$cat_list = get_the_category();
+																				if( $cat_list ): 
+				      ?>
 											<p>
-												<a href="webdesign_emptrain_wordpress.html">【Web Design】新人研修6日目　Wordpress まとめ</a>
+												<a href="<?php echo the_permalink(get_the_ID()); ?>">【<?php $cat = get_the_category(); echo $cat[0]->name ?>】<?php the_title(); ?></a>
 											</p>
-											<p>
-												<a href="linux_gitcommand.html">【Linux】GitHubでよく使うcommand？（蔭山さんと田崎さんに習った）</a>
-											</p>
-											<p>
-												<a href="webdesign_emptrain_5.html">【新人研修】5日目　( html js WordPress )</a>
-											</p>
+								<?php 
+																				endif;
+																endforeach;
+												endif;
+								?>
 								  </div>
 								  <div class="box29">
 										<div class="box-title">カテゴリ一覧</div>

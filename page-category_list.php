@@ -2,7 +2,7 @@
 		<!-- banner start -->
 		<!-- ================ -->
 		<div id="banner " class="banner top" >
-				<h1 class="text-center banner-main" style="color:#fff;" ><span>Hello world!</span></h1>
+				<h1 class="text-center banner-main" style="color:#fff;" >カテゴリー　一覧</h1>
 			<div class="banner-main">
 			</div>
 		</div>

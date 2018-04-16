@@ -2,7 +2,7 @@
 		<!-- banner start -->
 		<!-- ================ -->
 		<div id="banner " class="banner top" >
-				<h1 class="text-center banner-main" style="color:#fff;" ><span>Hello world!</span></h1>
+				<h1 class="text-center" style="color:#fff;" ><span>【<?php $cat = get_the_category(); echo $cat[0]->name ?>】<?php the_title(); ?></span></h1>
 			<div class="banner-main">
 			</div>
 		</div>
@@ -16,22 +16,11 @@
 						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-8">
-									<h2 id="about" class="title" >最新記事</h2>
-									<ul class="cards">
+									<h2 id="about" class="title" >【<?php $cat = get_the_category(); echo $cat[0]->name ?>】<?php the_title(); ?></h2>
 <?php
- if(have_posts()):while(have_posts()):the_post();?>
-										<li class="cards__item">
-										<div class="card">
-                    <div class="card__image" style="background-image:url(<?php the_post_thumbnail_url( 'medium' ); ?>);">
-												<a href="<?php echo get_permalink(get_the_ID()); ?>">link</a>
-											</div>
-										  <div class="card__content">
-											<div class="card__title"><?php the_title(); ?></div>
-										  </div>
-										</div>
-										</li>
-<?php endwhile; endif; ?>
-									</ul>
+if(have_posts()):while(have_posts()):the_post();
+								the_content();							
+endwhile; endif; ?>
 								</div>
 								<?php get_sidebar() ?>
 							</div>

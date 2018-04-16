@@ -28,8 +28,8 @@
 							</div>
 							<!-- name-and-slogan -->
 							<div class="site-name-and-slogan smooth-scroll">
-								<div class="site-name"><a href="index.html">Naograph</a></div>
-								<div class="site-slogan">This page is provided by <a target="_blank" href="http://htmlcoder.me">Naograph</a></div>
+								<div class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Naograph</a></div>
+								<div class="site-slogan">This page is provided by <a  href="<?php echo esc_url( home_url( '/' ) ); ?>">Naograph</a></div>
 							</div>
 						</div>
 						<!-- header-left end -->
